@@ -1,9 +1,56 @@
-node_modules
-dist
-.git
-legacy
-*.md
-!.env.example
-coverage
+# Arquivos versionados que NAO devem ir pro contexto do docker build.
+# Reduz o tempo de build e a chance de "cache miss" por mudancas irrelevantes.
+
+# Dependencias - serao reinstaladas dentro do container
+node_modules/
+
+# Output do build local - sera gerado dentro do container
+dist/
+build/
+
+# Cache
+.cache/
+.parcel-cache/
+.turbo/
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env locais (nunca enviar pro build)
 .env
-.env.*
+.env.local
+.env.*.local
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker / Deploy (nao precisam ir pro contexto do proprio Dockerfile)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# CI
+.github/
+
+# Coverage / Tests
+coverage/
+*.test.ts
+*.spec.ts
+
+# TypeScript build info
+*.tsbuildinfo
