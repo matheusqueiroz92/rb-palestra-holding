@@ -1,0 +1,27 @@
+# Uso na VPS: copie para /opt/apps/palestra-holding/docker-compose.yml e ajuste rede Traefik,
+# certresolver e entrypoints conforme seu ambiente (compare com outro projeto na mesma VPS).
+#
+# Pré-requisito: repositório clonado em /var/www/palestra-holding (branch principal atualizada).
+
+services:
+  palestra-holding-web:
+    build:
+      context: /var/www/palestra-holding
+      dockerfile: Dockerfile
+      args:
+        VITE_TICKET_PURCHASE_URL: ${VITE_TICKET_PURCHASE_URL:-}
+    restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.palestra-holding.rule=Host(`palestra-holding.reboucasbulhoes.com`)
+      - traefik.http.routers.palestra-holding.entrypoints=websecure
+      - traefik.http.routers.palestra-holding.tls=true
+      - traefik.http.routers.palestra-holding.tls.certresolver=letsencrypt
+      - traefik.http.routers.palestra-holding.service=palestra-holding-svc
+      - traefik.http.services.palestra-holding-svc.loadbalancer.server.port=80
+
+networks:
+  traefik:
+    external: true

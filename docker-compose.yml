@@ -1,0 +1,11 @@
+# Build local (sem Traefik): http://localhost:8080
+services:
+  palestra-holding-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_TICKET_PURCHASE_URL: ${VITE_TICKET_PURCHASE_URL:-}
+    ports:
+      - "8080:80"
+    restart: unless-stopped
