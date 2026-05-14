@@ -19,13 +19,16 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm ci
 
-# Copia o resto do codigo e builda. Vite gera output em dist/ por padrao.
+# Copia o resto do codigo
 COPY . .
 
-# Build args -> ENV (Vite le VITE_* do ambiente em build-time)
+# Build args -> ENV (Vite le VITE_* do ambiente em build-time e inlina no bundle).
+# Esses precisam estar definidos via --build-arg ou via `build.args` no compose,
+# senao o bundle vai ficar com `undefined` no lugar das variaveis.
 ARG VITE_TICKET_PURCHASE_URL
 ENV VITE_TICKET_PURCHASE_URL=${VITE_TICKET_PURCHASE_URL}
 
+# Builda. Vite gera output em dist/ por padrao.
 RUN npm run build
 
 # ----- Stage 2: nginx servindo dist/ -----
@@ -41,9 +44,12 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 
-# Healthcheck simples (nginx responde 200 em /)
+# Healthcheck usando endpoint dedicado /healthz definido no nginx.conf.
+# Mais robusto que `--spider` no `/` porque (a) o /healthz so retorna 200 OK,
+# nao depende do dist estar perfeito, e (b) wget -qO- /dev/null faz GET real
+# e captura status code corretamente.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1
+  CMD wget -q -O /dev/null http://localhost/healthz || exit 1
 
 # nginx:alpine ja tem um CMD apropriado, mas deixamos explicito por clareza.
 CMD ["nginx", "-g", "daemon off;"]
