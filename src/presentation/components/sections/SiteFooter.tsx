@@ -1,10 +1,13 @@
 export function SiteFooter() {
+
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-logo">Reboucas & Bulhoes</div>
+        <div className="footer-logo">Rebouças & Bulhões</div>
         <p className="footer-tagline">
-          Assessoria Empresarial &bull; Estrategia, Gestao, Governanca e Negocios
+          Assessoria Empresarial &bull; Estratégia, Gestão, Governança e Negócios
         </p>
         <div className="footer-links">
           <a href="mailto:reboucasebulhoesassessoria@gmail.com" className="footer-link">
@@ -15,7 +18,7 @@ export function SiteFooter() {
           </a>
         </div>
         <p className="footer-copy">
-          &copy; 2025 Reboucas & Bulhoes Assessoria Empresarial. Todos os direitos reservados.
+          &copy; {year} Rebouças & Bulhões Assessoria Empresarial. Todos os direitos reservados.
         </p>
       </div>
     </footer>

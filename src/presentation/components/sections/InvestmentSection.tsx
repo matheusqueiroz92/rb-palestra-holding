@@ -13,35 +13,35 @@ export function InvestmentSection() {
           </h2>
         </div>
         <div className="investment-card reveal">
-          <span className="investment-tag">Inscricao Individual</span>
+          <span className="investment-tag">Inscrição Individual</span>
           <div className="investment-price">
             <span>R$</span> 590
           </div>
-          <p className="investment-sub">Pagamento unico. Sem taxas adicionais.</p>
+          <p className="investment-sub">Pagamento único. Sem taxas adicionais.</p>
           <div className="investment-includes">
             <div className="include-item">
               <span className="include-check">&#10003;</span>
-              <span>Acesso integral ao evento no Auditorio do Multiplace</span>
+              <span>Acesso integral ao evento no Auditório do Multiplace</span>
             </div>
             <div className="include-item">
               <span className="include-check">&#10003;</span>
-              <span>Material didatico exclusivo elaborado pela equipe da Reboucas & Bulhoes</span>
+              <span>Material didático exclusivo elaborado pela equipe da Rebouças & Bulhões</span>
             </div>
             <div className="include-item">
               <span className="include-check">&#10003;</span>
-              <span>Coffee break e almoco em ambiente de networking seleto</span>
+              <span>Coffee break e almoço em ambiente de networking seleto</span>
             </div>
             <div className="include-item">
               <span className="include-check">&#10003;</span>
-              <span>Certificado de participacao</span>
+              <span>Certificado de participação</span>
             </div>
             <div className="include-item">
               <span className="include-check">&#10003;</span>
-              <span>Sessao de perguntas e respostas direta com o palestrante</span>
+              <span>Sessão de perguntas e respostas direta com o palestrante</span>
             </div>
             <div className="include-item">
               <span className="include-check">&#10003;</span>
-              <span>Acesso ao grupo exclusivo de participantes para networking pos-evento</span>
+              <span>Acesso ao grupo exclusivo de participantes para networking pós-evento</span>
             </div>
           </div>
           <TicketPurchaseLink
@@ -51,7 +51,7 @@ export function InvestmentSection() {
             Garantir Minha Vaga Agora
           </TicketPurchaseLink>
           <div className="investment-warning">
-            Vagas limitadas ao auditorio. Nao ha garantia de novas edicoes em 2025.
+            Vagas limitadas ao auditório. Não há garantia de novas edições em 2026.
           </div>
         </div>
       </div>

@@ -13,32 +13,32 @@ export function SpeakerSection() {
             <div className="section-header reveal">
               <span className="section-tag">Palestrante</span>
               <h2 className="section-title">
-                Jose Ricardo de Souza
+                José Ricardo de Souza
                 <br />
-                <em>Reboucas Bulhoes</em>
+                <em>Rebouças Bulhões</em>
               </h2>
             </div>
             <p className="speaker-bio reveal">
-              Advogado e Socio-Fundador da Reboucas & Bulhoes Assessoria Empresarial, firma
-              multidisciplinar especializada em Estrategia, Gestao, Governanca e Negocios para
+              Advogado e Sócio-Fundador da Rebouças & Bulhões Assessoria Empresarial, firma
+              multidisciplinar especializada em Estratégia, Gestão, Governança e Negócios para
               grupos empresariais.
             </p>
             <p className="speaker-bio reveal">
-              Com experiencia consolidada na assessoria juridica e empresarial a empreendedores e
-              familias empresariais, Jose Ricardo acumula atuacao em reestruturacoes societarias,
-              planejamento sucessorio, protecao patrimonial e governanca corporativa em setores
+              Com experiência consolidada na assessoria jurídica e empresarial a empreendedores e
+              familias empresariais, José Ricardo acumula atuação em reestruturações societárias,
+              planejamento sucessório, proteção patrimonial e governança corporativa em setores
               variados da economia brasileira.
             </p>
             <p className="speaker-bio reveal">
-              E reconhecido por traduzir estruturas juridicas complexas em estrategias claras,
-              aplicaveis e orientadas a resultados reais para o patriomio de seus clientes.
+              É reconhecido por traduzir estruturas jurídicas complexas em estratégias claras,
+              aplicáveis e orientadas a resultados reais para o patrimônio de seus clientes.
             </p>
             <div className="speaker-credentials reveal">
               <div className="credential">Advogado inscrito na OAB</div>
-              <div className="credential">Socio-Fundador da Reboucas & Bulhoes Assessoria Empresarial</div>
+              <div className="credential">Sócio-Fundador da Rebouças & Bulhões Assessoria Empresarial</div>
               <div className="credential">Especialista em Estrututuracao de Holdings e Planejamento Patrimonial</div>
               <div className="credential">
-                Assessor de grupos empresariais em reestruturacoes societarias e tributarias
+                Assessor de grupos empresariais em reestruturações societárias e tributárias
               </div>
             </div>
           </div>
