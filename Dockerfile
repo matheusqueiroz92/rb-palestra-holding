@@ -49,7 +49,7 @@ EXPOSE 80
 # nao depende do dist estar perfeito, e (b) wget -qO- /dev/null faz GET real
 # e captura status code corretamente.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget -q -O /dev/null http://localhost/healthz || exit 1
+  CMD wget -q -O /dev/null http://127.0.0.1/healthz || exit 1
 
 # nginx:alpine ja tem um CMD apropriado, mas deixamos explicito por clareza.
 CMD ["nginx", "-g", "daemon off;"]
