@@ -21,6 +21,11 @@ RUN npm ci
 
 # Copia o resto do codigo e builda. Vite gera output em dist/ por padrao.
 COPY . .
+
+# Build args -> ENV (Vite le VITE_* do ambiente em build-time)
+ARG VITE_TICKET_PURCHASE_URL
+ENV VITE_TICKET_PURCHASE_URL=${VITE_TICKET_PURCHASE_URL}
+
 RUN npm run build
 
 # ----- Stage 2: nginx servindo dist/ -----
